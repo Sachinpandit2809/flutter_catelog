@@ -6,10 +6,58 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-        child: Center(
-      child: Text("LOgin Page",
-          style: TextStyle(
-              fontSize: 40, color: Colors.green, fontWeight: FontWeight.bold)),
-    ));
+        color: Colors.white,
+        //     child: Center(
+        //   child: Text("LOgin Page",
+        //       style: TextStyle(
+        //           fontSize: 40, color: Colors.green, fontWeight: FontWeight.bold)),
+        // )
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/images/logImg1.png",
+              fit: BoxFit.cover,
+            ),
+            SizedBox(height: 20), //this is used to space padding
+            Text(
+              "Welcome",
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 78, 66, 236)),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Enter username",
+                      labelText: "username",
+                    ),
+                  ),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Enter Password",
+                      labelText: "Password",
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              child: Text("login"),
+              style: TextButton.styleFrom(),
+              onPressed: () {
+                print("hii clicked");
+              },
+            )
+          ],
+        ));
   }
 }
